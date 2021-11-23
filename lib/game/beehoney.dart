@@ -25,9 +25,6 @@ class BeeHoney extends FlameGame with KeyboardEvents, HasCollidables {
   GameText textScore = GameText("Score: ", 10, 10, BasicPalette.black.color);
   GameText textLifes = GameText("Lifes: ", 380, 10, BasicPalette.black.color);
 
-  Obj end = Obj();
-  int cout = 0;
-
   @override
   Future<void>? onLoad() async {
     bg
@@ -72,11 +69,6 @@ class BeeHoney extends FlameGame with KeyboardEvents, HasCollidables {
       ..addHitbox(HitboxRectangle());
 
     add(flower);
-
-    end
-      ..sprite = await Sprite.load("gameover.png")
-      ..position = Vector2(0, 0)
-      ..size = Vector2(500, 900);
 
     add(textLifes);
     add(textScore);
